@@ -6,6 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./tevas.component.css'],
 })
 export class TevasComponent {
+  rodytiVaikus = true;
+  vaikai = ['Petras', 'Ona', 'Leonardokadijus', 'Skaivelina'];
+
+  sleptiVaikus() {
+    this.rodytiVaikus = !this.rodytiVaikus;
+  }
+
   keisti() {
     console.log('Pakeista');
   }

@@ -1,1 +1,9 @@
-<app-vaikas (paspaudimas)="keisti()" vardas="Petras"></app-vaikas>
+<ng-container *ngIf="rodytiVaikus">
+  <app-vaikas
+    (paspaudimas)="keisti()"
+    vardas="{{ vaikas }}"
+    *ngFor="let vaikas of vaikai"
+  >
+  </app-vaikas>
+</ng-container>
+<button (click)="sleptiVaikus()">Paslepti vaikus</button>
