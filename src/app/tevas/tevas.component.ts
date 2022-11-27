@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { VardaiService } from '../vardai.service';
 
 @Component({
   selector: 'app-tevas',
@@ -7,7 +8,10 @@ import { Component } from '@angular/core';
 })
 export class TevasComponent {
   rodytiVaikus = true;
-  vaikai = ['Petras', 'Ona', 'Leonardokadijus', 'Skaivelina'];
+  vaikai: string[] = [];
+  constructor(private vardaiService: VardaiService) {
+    this.vaikai = this.vardaiService.gaukVardus();
+  }
 
   sleptiVaikus() {
     this.rodytiVaikus = !this.rodytiVaikus;
