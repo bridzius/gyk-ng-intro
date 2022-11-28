@@ -2,7 +2,7 @@
   <app-vaikas
     (paspaudimas)="keisti()"
     vardas="{{ vaikas }}"
-    *ngFor="let vaikas of vaikai"
+    *ngFor="let vaikas of vaikai | async"
   >
   </app-vaikas>
 </ng-container>
